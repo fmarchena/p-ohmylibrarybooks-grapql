@@ -1,0 +1,21 @@
+type Book {
+  _id: ID!,
+  sku: String!,
+  post_type: String!,
+  title: String!,
+  description: String!,
+  authors: String!,
+  genders: [String]!,  # Utiliza [String] para indicar un array de cadenas
+  year_publication: Int!,  # Utiliza Int para indicar un número entero
+  month: String!,
+  number_pages: Int!,  # Utiliza Int para indicar un número entero
+  editorial: String!
+}
+
+
+type Query {
+  "Devuelve todos Books"
+  getBooks: [Book]
+  "Devuelve un Book"
+  getBook(id: ID!): Book
+}
